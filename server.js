@@ -101,9 +101,10 @@ app.put('/recipes/:id', jsonParser, (req, res) => {
   console.log(`Updating recipe \`${req.params.id}\``);
   Recipes.update({
     id: req.params.id,
-    ingredients: req.body.ingredients
+    ingredients: req.body.ingredients,
+    name: req.body.name
   });
-
+  res.status(204).end();
 });
 
 // when DELETE request comes in with an id in path,
