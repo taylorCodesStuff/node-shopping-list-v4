@@ -77,9 +77,9 @@ app.put('/shopping-list/:id', jsonParser, (req, res) => {
   res.status(204).end();
 });
 
-app.put('recipes/:id', jsonParser, (req, res) => {
+app.put('/recipes/:id', jsonParser, (req, res) => {
   // Check & make sure all "fields" are fulfilled
-  const requiredFields = ['name','ingredients'];
+  const requiredFields = ['name','ingredients', 'id'];
   for(let i=0;i<requiredFields.length;i++){
     let field = requiredFields[i];
     if(!(field in req.body)){
